@@ -1,6 +1,18 @@
 import React from 'react'
-import NewApp from './components/NewApp'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BrightMindLanding from './components/landing/BrightMindLanding';
+import Reader from './components/Reader';
+import './styles/globals.css';
 
-export default function App() {
-  return <NewApp />
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<BrightMindLanding />} />
+        <Route path="/reader" element={<Reader />} />
+      </Routes>
+    </Router>
+  );
 }
+
+export default App;

@@ -18,13 +18,15 @@ export interface Line {
   importance_score: number
   character?: string
   visualization?: {
-    type: string
+    type: 'image' | 'video'
     description: string
     style: string
     colors: string[]
     objects: string[]
     mood: string
     confidence: number
+    image_url?: string
+    video_url?: string
   }
   key_concepts: string[]
   reading_difficulty: number
@@ -125,6 +127,7 @@ interface AppState {
   setShowSettings: (show: boolean) => void
   setShowVisualizations: (show: boolean) => void
   setFocusMode: (focus: boolean) => void
+  setLineVisualization: (lineIndex: number, visualization: Line['visualization']) => void
   
   // Computed getters
   getCurrentLine: () => Line | null
@@ -189,6 +192,33 @@ export const useStore = create<AppState>()(
       setShowSettings: (show) => set({ showSettings: show }),
       setShowVisualizations: (show) => set({ showVisualizations: show }),
       setFocusMode: (focus) => set({ focusMode: focus }),
+      
+      setLineVisualization: (lineIndex: number, visualization: Line['visualization']) => {
+        set((state) => {
+          if (!state.document?.pages) return state;
+          
+          const updatedPages = state.document.pages.map((page, pageIndex) => {
+            if (pageIndex === state.currentPage) {
+              const updatedLines = page.lines.map((line, idx) => {
+                if (idx === lineIndex) {
+                  return { ...line, visualization };
+                }
+                return line;
+              });
+              return { ...page, lines: updatedLines };
+            }
+            return page;
+          });
+          
+          return {
+            ...state,
+            document: {
+              ...state.document,
+              pages: updatedPages
+            }
+          };
+        });
+      },
       
       // Computed getters
       getCurrentLine: () => {
