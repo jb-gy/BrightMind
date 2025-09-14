@@ -110,8 +110,8 @@ The backend provides a robust API with multiple specialized services:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/Book-Flow.git
-cd Book-Flow
+git clone https://github.com/yourusername/BrightMind.git
+cd BrightMind
 ```
 
 ### 2. Backend Setup
