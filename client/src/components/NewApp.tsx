@@ -284,7 +284,7 @@ export default function NewApp() {
                 <Brain className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">ADHD Reader</h1>
+                <h1 className="text-xl font-bold text-gray-900">BrightMind</h1>
                 <p className="text-sm text-gray-500">AI-Powered Reading Assistant</p>
               </div>
             </div>

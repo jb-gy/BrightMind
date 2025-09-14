@@ -76,7 +76,7 @@ export default function DocumentReader({
           <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
             <BookOpen size={32} className="text-blue-600" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-800 mb-3">Welcome to ADHD Reader</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-3">Welcome to BrightMind</h3>
           <p className="text-gray-600 mb-6 leading-relaxed">
             Upload a PDF document to start your personalized reading experience with AI-powered visualizations and voice assistance.
           </p>

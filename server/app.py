@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-app = FastAPI(title="ADHD Reader API", version="2.0.0")
+app = FastAPI(title="BrightMind API", version="2.0.0")
 
 origins = os.getenv("APP_ORIGINS", "http://localhost:5173").split(",")
 app.add_middleware(
@@ -59,7 +59,7 @@ async def shutdown_event():
 def root():
     return {
         "ok": True, 
-        "service": "adhd-reader-api",
+        "service": "brightmind-api",
         "version": "2.0.0",
         "features": [
             "AI-powered content analysis",
