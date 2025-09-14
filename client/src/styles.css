@@ -1,0 +1,336 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom fonts for ADHD-friendly reading */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=OpenDyslexic:wght@400;700&display=swap');
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* ADHD-friendly reading styles */
+.reading-text {
+  font-family: 'OpenDyslexic', 'Inter', system-ui, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  letter-spacing: 0.025em;
+  color: #374151;
+}
+
+.focus-line {
+  background: linear-gradient(90deg, #fef3c7 0%, #fde68a 50%, #fef3c7 100%);
+  border-left: 4px solid #f59e0b;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.blurred-line {
+  filter: blur(2px);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.highlighted-word {
+  background: linear-gradient(120deg, #a7f3d0 0%, #6ee7b7 100%);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  color: #065f46;
+  transition: all 0.2s ease;
+}
+
+.keyword-highlight {
+  background: linear-gradient(120deg, #fbbf24 0%, #f59e0b 100%);
+  color: #92400e;
+  font-weight: 700;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.character-voice {
+  border-left: 3px solid #3b82f6;
+  padding-left: 0.75rem;
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 0.375rem;
+  margin: 0.5rem 0;
+}
+
+/* Visualization styles */
+.visualization-container {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  margin: 1rem 0;
+}
+
+.visualization-placeholder {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border: 2px dashed #9ca3af;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Progress tracking */
+.progress-bar {
+  background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  transition: width 0.3s ease;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.milestone-badge {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
+}
+
+/* Settings panel */
+.settings-panel {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+/* Voice controls */
+.voice-selector {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.voice-selector:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.voice-option {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.voice-option:hover {
+  background-color: #f3f4f6;
+}
+
+.voice-option.selected {
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.pulse-gentle {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Focus mode styles */
+.focus-mode {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+.focus-mode .reading-text {
+  color: #f9fafb;
+}
+
+.focus-mode .focus-line {
+  background: linear-gradient(90deg, #374151 0%, #4b5563 50%, #374151 100%);
+  border-left-color: #f59e0b;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .reading-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .focus-line {
+    padding: 0.375rem 0.75rem;
+  }
+  
+  .visualization-container {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .highlighted-word {
+    background: #ffff00;
+    color: #000000;
+  }
+  
+  .keyword-highlight {
+    background: #ff6b6b;
+    color: #ffffff;
+  }
+  
+  .focus-line {
+    background: #ffffff;
+    border-left-color: #000000;
+    color: #000000;
+  }
+}
+
+/* New UI Components */
+.floating-panel {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.glass-effect {
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+/* Visualization panel animations */
+.visualization-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.visualization-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.visualization-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.visualization-exit-active {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Auto-reading indicator */
+.auto-reading-indicator {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Notes panel styles */
+.note-entry {
+  transition: all 0.2s ease;
+}
+
+.note-entry:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .glass-effect {
+    background-color: rgba(17, 24, 39, 0.75);
+    border-color: rgba(75, 85, 99, 0.3);
+  }
+  
+  .floating-panel {
+    background: rgba(17, 24, 39, 0.9);
+    border-color: rgba(75, 85, 99, 0.2);
+  }
+}
+
+/* Print styles */
+@media print {
+  .settings-panel,
+  .voice-controls,
+  .progress-bar {
+    display: none;
+  }
+  
+  .reading-text {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  .focus-line {
+    background: none;
+    border-left: 2px solid #000000;
+  }
+}
