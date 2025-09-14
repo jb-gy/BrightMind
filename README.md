@@ -281,8 +281,8 @@ docker run -p 3000:80 brightmind-frontend
 ### Automated Setup
 ```bash
 # Clone to Raspberry Pi
-git clone https://github.com/yourusername/Book-Flow.git
-cd Book-Flow
+git clone https://github.com/yourusername/BrightMind.git
+cd BrightMind
 
 # Run setup script
 chmod +x raspberry-pi/setup.sh
@@ -308,7 +308,7 @@ nano server/.env
 
 ### Project Structure
 ```
-Book-Flow/
+BrightMind/
 ├── client/                    # React frontend
 │   ├── src/
 │   │   ├── components/        # React components
@@ -530,13 +530,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Zustand](https://github.com/pmndrs/zustand) for state management
 - [Lucide React](https://lucide.dev/) for icons
 
-## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/Book-Flow/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/Book-Flow/discussions)
-- **Email**: support@brightmind.app
 
-## 🗺️ Roadmap
+## 🗺️ Future Improvements
 
 ### Version 2.1
 - [ ] Mobile app (React Native)
